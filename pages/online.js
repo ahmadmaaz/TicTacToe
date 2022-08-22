@@ -190,7 +190,7 @@ function Online() {
     <div className="bg-black h-screen flex flex-wrap user-none select-none justify-center items-center ">
       <Head>
         
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4230105514569476" crossorigin="anonymous"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4230105514569476" crossOrigin="anonymous"></script>
         <title>XO Game - play tictactoe online ! Check out all tictactoe modes!</title>
         <meta name="og:title"  content="XO Game - play tictactoe online ! Check out all tictactoe modes!" />
         <meta name="keywords"  content='x and o game, xo game online,  tictactoe online, tictactoe play, tictactoe game, google tictactoe, tictactoe 2 players' />

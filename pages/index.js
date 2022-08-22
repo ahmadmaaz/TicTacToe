@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Script from "next/script"
 import React from 'react'
 
@@ -22,11 +23,10 @@ export default function Home() {
         <div className='text-white h-screen flex flex-col justify-center  items-center'>
           <h1 className='text-center text-white text-7xl font-bold mb-4 fontT'>Tic Tac Toe</h1>
           <h3 className='text-white text-center text-xs md:text-base fontT mb-4'>The one who loses always starts the game!</h3>
-          <a href="/single"  className=" w-9/12  lg:w-4/12 text-center py-4 px-8 my-4 fontT text-3xl md:text-4xl rounded-xl border-2 border-white  shadow-inner shadow-white hover:text-black hover:bg-white transition-all duration-500" >Local Multiplayer </a>
-          <a href="/bot"  className=" w-9/12  lg:w-4/12 text-center py-4 px-8 my-4 fontT text-3xl md:text-4xl rounded-xl border-2 border-white  shadow-inner shadow-white hover:text-black hover:bg-white transition-all duration-500" >Bot</a>
-          <a href="/online"  className=" w-9/12  lg:w-4/12 text-center py-4 px-8 my-4 fontT text-3xl md:text-4xl rounded-xl border-2 border-white  shadow-2xl  shadow-red-400 hover:text-black hover:bg-white transition-all duration-500" >Online Multiplayer</a>
-         
-
+          <Link href="/single"   ><button className=" w-9/12  lg:w-4/12 text-center py-4 px-8 my-4 fontT text-3xl md:text-4xl rounded-xl border-2 border-white  shadow-inner shadow-white hover:text-black hover:bg-white transition-all duration-500">Local Multiplayer </button></Link>
+          <Link href="/bot" ><button  className=" w-9/12  lg:w-4/12 text-center py-4 px-8 my-4 fontT text-3xl md:text-4xl rounded-xl border-2 border-white  shadow-inner shadow-white hover:text-black hover:bg-white transition-all duration-500">Bot</button></Link>
+          <Link href="/online"   ><button className=" w-9/12  lg:w-4/12 text-center py-4 px-8 my-4 fontT text-3xl md:text-4xl rounded-xl border-2 border-white  shadow-2xl  shadow-red-400 hover:text-black hover:bg-white transition-all duration-500">Online Multiplayer</button></Link>
+        
         </div>
 
       </main>
