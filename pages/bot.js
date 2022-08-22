@@ -157,6 +157,7 @@ export default function Single() {
         <title>XO Game- Play Against Bot!</title>
         <meta name="description" content="XO Play Against a bot- Hard level Bot!! Dont miss out the online multiplayer though ! " />
         <link rel="icon" href="/Tic.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4230105514569476" crossOrigin="anonymous"></script>
       </Head>
       <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4230105514569476" /> 
       <div className="w-full  lg:w-1/4  xl:w-1/4 md:w-1/4 "></div>

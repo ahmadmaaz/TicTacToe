@@ -197,8 +197,9 @@ function Online() {
         <meta name="og:description" content="XO Online - play tictactoe online against a friend  with an easy room setup. @ahmad" />
         <meta name="description" content="XO Online - play tictactoe online against a friend  with an easy room setup. @ahmad" />
         <link rel="icon" href="/Tic.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4230105514569476" crossOrigin="anonymous"></script>
       </Head>
-      <Script id="Adsense-id" data-ad-client="ca-pub-4230105514569476" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"  async strategy="afterInteractive"   onError={ (e) => { console.error('Script failed to load', e) }} /> 
+      
           <div className="w-full  lg:w-1/4  xl:w-1/4 md:w-1/4 "></div>
           <div className="w-full  lg:w-2/4  xl:w-2/4 md:w-2/4  ">
             {createRoomBool 

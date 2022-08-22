@@ -88,9 +88,9 @@ export default function Single() {
         <title>XO Game - Local Multiplayer</title>
         <meta name="description" content="XO Local multiplayer- 2 players -The one Who Loses always starts the game !! " />
         <link rel="icon" href="/Tic.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4230105514569476" crossOrigin="anonymous"></script>
       </Head>
       
-      <Script id="Adsense-id" data-ad-client="ca-pub-4230105514569476" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"  async strategy="afterInteractive"  onError={ (e) => { console.error('Script failed to load', e) }} />  
           <div className="w-full  lg:w-1/4  xl:w-1/4 md:w-1/4 "></div>
           <div className="w-full  lg:w-2/4  xl:w-2/4 md:w-2/4  ">
             <h1 className="text-white text-3xl fontT text-center animate-pulse mb-4">{playing} turn </h1>

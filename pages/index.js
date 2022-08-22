@@ -15,8 +15,9 @@ export default function Home() {
         <meta name="og:description" content="XO game - play tictactoe against a bot,player2, or even a friend online! The One Who loses always starts the game!  @ahmad  "  />
         <meta name="keywords"  content='x and o game, xo game online,  tictactoe online, tictactoe play, tictactoe game, google tictactoe, tictactoe 2 players' />
         <link rel="icon" href="/Tic.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4230105514569476" crossOrigin="anonymous"></script>
       </Head>
-      <Script id="Adsense-id" data-ad-client="ca-pub-4230105514569476" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"  async strategy="afterInteractive"  onError={ (e) => { console.error('Script failed to load', e) }} /> 
+      
 
       <main className=' h-screen'>
         
