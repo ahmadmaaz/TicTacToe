@@ -1,4 +1,4 @@
-import { Server } from 'Socket.IO'
+import { Server } from 'socket.io'
 let rooms= [{name:"yeha0290291302190319"}]
 const SocketHandler = (req, res) => {
   if (!res.socket.server.io) {
