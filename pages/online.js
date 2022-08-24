@@ -3,11 +3,10 @@ import  io  from "socket.io-client";
 import Board from "../components/Board";
 import ScoreBoard from "../components/ScoreBoard";
 import Head from 'next/head';
-import Script from "next/script"
 import {Howl} from "howler"
 
 //const socket = io("http://localhost:3050/");
-const socket = io("https://socketio-xoserver.herokuapp.com/");
+let socket
 
 
 var turn=false;
@@ -62,53 +61,14 @@ function Online() {
       })
       sound.play();
     }
-
-    useEffect(() => {
-      
-      socket.on("connect", (arg)=>{
-      })
-      socket.on("disconnect",(arg)=>{
-
-        setRoom("");
-        setCreateRoomBool(false);
-        score1=0;
-        score2=0;
-        draw=0;
-        turn=false;
-        setWaitingForPlayer(true);
-        setPlayerName1("");
-        setPlayerName2("");
-        setTurnText("Opponent's Turn");
-        for(let i=1;i<10;i++){
-          
-          eval(`setButton${i}("")`)
-          eval(`setButtonCond${i}("")`)
-        }
-
-      })
-      socket.on("reset",(arg)=>{
-        for(let i=1;i<10;i++){
-          
-          eval(`setButton${i}("")`)
-          eval(`setButtonCond${i}("")`)
-        }
-        setWhoWon("")
-
-      })
-      socket.on("play",(nmb,playing)=>{
-        soundPlay("pop.mp3")
-        console.log(nmb+playing)
-        eval(`setButton${nmb}("${playing}")`)
-        if (turn==false){turn=true; setTurnText("Your Turn")}
-        else{turn=false; setTurnText("Opponent's Turn")}
-      });
-      socket.on("playerJoined",(arg)=>{
-
-        setWaitingForPlayer(false)
-      })
-
-      
+    const socketInitializer = async () => {
+      await fetch("/api/socket");
   
+      socket = io();
+  
+    };
+    useEffect(() => {
+      socketInitializer()  
     },[]);
     
     //Check the game if someone won or...
@@ -172,6 +132,8 @@ function Online() {
       if(room!="" && playerName1!=""){
         socket.emit("create",room,playerName1)
         setCreateRoomBool(true) 
+
+        //Sockets Logic
         socket.on("XorO",(arg,player1,player2)=>{
           if (playing==""){setPlaying(arg)}
           if (arg=="X"){turn=true;setTurnText("Your Turn")}
@@ -179,6 +141,44 @@ function Online() {
           setPlayerName1(player1);
           setPlayerName2(player2)
         })
+        socket.on("playerJoined",(arg)=>{
+          setWaitingForPlayer(false)
+        })
+        socket.on("disconnect",(arg)=>{
+
+          setRoom("");
+          setCreateRoomBool(false);
+          score1=0;
+          score2=0;
+          draw=0;
+          turn=false;
+          setWaitingForPlayer(true);
+          setPlayerName1("");
+          setPlayerName2("");
+          setTurnText("Opponent's Turn");
+          for(let i=1;i<10;i++){
+            
+            eval(`setButton${i}("")`)
+            eval(`setButtonCond${i}("")`)
+          }
+  
+        })
+        socket.on("reset",(arg)=>{
+          for(let i=1;i<10;i++){
+            
+            eval(`setButton${i}("")`)
+            eval(`setButtonCond${i}("")`)
+          }
+          setWhoWon("")
+  
+        })
+        socket.on("play",(nmb,playing)=>{
+          soundPlay("pop.mp3")
+
+          eval(`setButton${nmb}("${playing}")`)
+          if (turn==false){turn=true; setTurnText("Your Turn")}
+          else{turn=false; setTurnText("Opponent's Turn")}
+        });
       }
 
 
